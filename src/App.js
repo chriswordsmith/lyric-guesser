@@ -1,5 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
+import { fetchData } from './services/quotes-fetch';
+
+
 
 function App() {
   return (
@@ -17,6 +20,7 @@ function App() {
         >
           Learn React
         </a>
+        
       </header>
     </div>
   );
