@@ -2,27 +2,19 @@ import { useState, useEffect, setState } from 'react';
 import React from 'react';
 import axios from 'axios';
 
-let URL =  'https://api.api-ninjas.com/v1/quotes?category=' + category
 let category = "anger"
+let URL =  'https://api.api-ninjas.com/v1/quotes?category=' + category
 
-const Quotes = () => {
-  useEffect(() => {
-    getQuotes();
-  }, []);
+
   
-  const [quotes, setQuotes] = React.useState();
-
-  const getQuotes = () => {
-    return axios
-      .get (URL)
-      .then((res) =› console.log (res.data))
-      .catch((err) =› console.error (err));
-    };
-    getQuotes();
-    return <h1>quotes</h1>;
+export const getQuotes = () => {
+  return axios.get(URL,{
+      headers: { 'X-Api-Key': 'RO3HcoMlPoxv3aIo/tHeDA==N1ZNWBVJY32TY8ZA'},
+    },
+  )
 };
 
-export default Quotes;
+
 
 
 
@@ -36,10 +28,10 @@ export default Quotes;
 //   axios({
 //       'method':'GET',
 //       'url': URL,
-//       'headers': {
-//         'headers': { 'X-Api-Key': 'RO3HcoMlPoxv3aIo/tHeDA==N1ZNWBVJY32TY8ZA'},
-//         'contentType': 'application/json',
-//       },
+      // 'headers': {
+      //   'headers': { 'X-Api-Key': 'RO3HcoMlPoxv3aIo/tHeDA==N1ZNWBVJY32TY8ZA'},
+      //   'contentType': 'application/json',
+      // },
 //   })
 // }
 
