@@ -1,29 +1,33 @@
 import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 import { fetchData } from './services/quotes-fetch';
+import { useState, useEffect } from 'react';
 
 
 
 function App() {
+  const [response] = useState([]);
+
+    // useEffect(() => {
+    //   let mounted = true;
+    //   fetchData()
+    //     .then(response => {
+    //       if(mounted) {
+    //         console.log()
+    //       }
+    //     })
+    //   return () => mounted = false;
+    // })
+
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        
+      <h1>API CALL</h1>
+        <p>{response}</p>
       </header>
     </div>
   );
-}
-
+  }
 export default App;
