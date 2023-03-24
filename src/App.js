@@ -3,21 +3,24 @@ import React from 'react';
 import './App.css';
 import { fetchData } from './services/quotes-fetch';
 import { useState, useEffect } from 'react';
-import { getQuotes } from './services/quotes-fetch';
+import { getQuotes } from './services/quotes-fetch'
 import { getRoles } from '@testing-library/react';
 
 
 
 function App() {
-  const [response, setResponse] = useState();
+  const [quoteResponse, setResponse] = useState();
   const [loading, setLoading] = useState(true)
 
     useEffect(() => {
      fetchData()
       }, [])
+   
+
 const fetchData = async () => {
   try{
 
+  
   const responses = await getQuotes()
   console.log(responses)
   setLoading(false)
@@ -26,6 +29,7 @@ const fetchData = async () => {
     console.error(e)
   }
 
+  
 }
 
   return (
@@ -33,10 +37,13 @@ const fetchData = async () => {
       <header className="App-header">
       <h1>API CALL</h1>
       <p>{loading? "loading" : "done"}</p>
-       {!loading && <h2>{JSON.stringify(response[0].quote) }</h2>}
-
+       {!loading && <h2>{JSON.stringify(quoteResponse[0].quote) }</h2>}
+       
+       
       </header>
     </div>
+
+
   );
   }
 export default App;

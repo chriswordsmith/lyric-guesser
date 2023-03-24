@@ -2,29 +2,25 @@ import { useState, useEffect, setState } from 'react';
 import React from 'react';
 import axios from 'axios';
 
-let URL =  'https://api.api-ninjas.com/v1/quotes?category=' + category
 let category = "anger"
+let URL =  'https://api.api-ninjas.com/v1/quotes?category=' + category
 
-const Quotes = () => {
-  useEffect(() => {
-    getQuotes();
-  }, []);
-  
+let option = {
+  headers: {
+    "X-Api-Key": "RO3HcoMlPoxv3aIo/tHeDA==N1ZNWBVJY32TY8ZA"
+  }
+}
 
-  const [quotes, setQuotes] = React.useState();
-
-  const getQuotes = () => {
+export const getQuotes = () => {
     return axios
-      .get (URL)
-      .then((res) => console.log (res.data))
-      .catch((err) => console.error (err));
+      .get (URL, option)
+      
+
+      // .then((res) => console.log (res.data))
+      // .catch((err) => console.error (err));
     };
-    getQuotes();
-    return <h1>quotes</h1>;
 
-};
 
-export default Quotes;
 
 
 
