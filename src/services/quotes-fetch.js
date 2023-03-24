@@ -15,8 +15,8 @@ const Quotes = () => {
   const getQuotes = () => {
     return axios
       .get (URL)
-      .then((res) =› console.log (res.data))
-      .catch((err) =› console.error (err));
+      .then((res) => console.log (res.data))
+      .catch((err) => console.error (err));
     };
     getQuotes();
     return <h1>quotes</h1>;
