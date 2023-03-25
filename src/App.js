@@ -7,6 +7,7 @@ import { getQuotes } from './services/quotes-fetch'
 import { getRoles } from '@testing-library/react';
 import DisplayQuote from './components/Quote-Display/displayquote';
 import DisplayRhyme from './components/Rhyme-Display/displayrhyme';
+import DisplaySynonym from './components/Thesaurus-Display/displaythesaurus';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <main>
         <DisplayQuote />
         <DisplayRhyme />
+        <DisplaySynonym />
       </main>
       </header>
     </div>
