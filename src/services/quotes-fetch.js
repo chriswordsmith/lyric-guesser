@@ -12,9 +12,9 @@ let option = {
 }
 
 export const getQuotes = () => {
-    return axios
-      .get (URL, option)
-    };
+  return axios
+    .get (URL, option)
+};
 
 
 

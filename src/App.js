@@ -5,9 +5,9 @@ import { fetchData } from './services/quotes-fetch';
 import { useState, useEffect } from 'react';
 import { getQuotes } from './services/quotes-fetch'
 import { getRoles } from '@testing-library/react';
-import DisplayQuote from './components/Quote-Display/displayquote';
-import DisplayRhyme from './components/Rhyme-Display/displayrhyme';
-import DisplaySynonym from './components/Thesaurus-Display/displaythesaurus';
+import DisplayQuote from './tests/Quote-Display/displayquote';
+import DisplayRhyme from './tests/Rhyme-Display/displayrhyme';
+import DisplaySynonym from './tests/Thesaurus-Display/displaythesaurus';
 
 
 function App() {
