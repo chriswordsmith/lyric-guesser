@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { getSynonym } from '../../services/synonym-fetch';
+import { getSynonym } from '../../services/synonymFetch';
 
 
 

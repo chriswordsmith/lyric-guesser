@@ -1,8 +1,11 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { selectWord } from '../../services/logic';
-import { getQuotes } from '../../services/quotes-fetch';
-import BlankWordDisplay from '../BlankWord-Display/blankword-display';
+import { selectWord } from '../../selectWord';
+import { getQuotes } from '../../services/quotesFetch';
+import BlankWordDisplay from '../BlankWord-Display/blankwordDisplay';
+import { getSynonym } from '../../services/synonymFetch';
+import { getRhyme } from '../../services/rhymeFetch';
+import DisplayRhyme from '../Rhyme-Display/displayRhyme';
 
 
 
@@ -18,12 +21,8 @@ const DisplayQuote = () => {
     const fetchQuotes = async () => {
       try{
         const responses = await getQuotes()
-        console.log(responses)
         setLoading(false)
         setResponse(responses.data)
-        console.log(JSON.stringify(quoteResponse))
-        console.log(responses)
-        selectWord(quoteResponse)
       }
       catch(e){
         console.error(e)
@@ -35,7 +34,9 @@ const DisplayQuote = () => {
       <p>{loading ? "loading" : "done"}</p>
       {!loading && <h2>{JSON.stringify(quoteResponse[0].quote)}</h2>}
       {!loading && <p>{JSON.stringify(quoteResponse[0].author)}</p>}
+      {/* Runs quote through the blank word logic to find the longest word and make this the selected word, then pass to APIs */}
       {!loading && <BlankWordDisplay quote = {JSON.stringify(quoteResponse[0].quote)}/>}
+      {!loading && <DisplayRhyme quote = {JSON.stringify(quoteResponse[0].quote)}/>}
     </div>
     
   );

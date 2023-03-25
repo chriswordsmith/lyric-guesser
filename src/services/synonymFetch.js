@@ -1,11 +1,9 @@
 import { useState, useEffect, setState } from 'react';
 import React from 'react';
 import axios from 'axios';
-
+import { selectWord } from '../selectWord';
 
 // word should be passed through props to be equal to the word that is removed from the string when the user asks for a hint
-let word = "anger"
-let URL =  'https://api.api-ninjas.com/v1/rhyme?word=' + word
 
 let option = {
   headers: {
@@ -13,8 +11,10 @@ let option = {
   }
 }
 
-export const getRhyme = () => {
+export const getSynonym = (selectedWord) => {
+  console.log(selectedWord)
+  let word = selectWord(selectedWord)
+  let URL =  'https://api.api-ninjas.com/v1/thesaurus?word=' + word
     return axios
       .get (URL, option)
     };
-
