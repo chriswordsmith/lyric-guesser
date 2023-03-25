@@ -1,13 +1,16 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import { selectWord } from '../../selectWord';
 import { getSynonym } from '../../services/synonymFetch';
 
 
 
-const DisplaySynonym = () => { 
+const DisplaySynonym = (response) => { 
     const [synonymResponse, setResponse] = useState();
     const [loading, setLoading] = useState(true);
-
+    let synonymQuote = response.quote
+    let synonymWord = selectWord(synonymQuote)
+    console.log(synonymWord)
     useEffect(() => {
      fetchSynonym()
       }, [])
@@ -15,7 +18,7 @@ const DisplaySynonym = () => {
 
     const fetchSynonym = async () => {
     try{
-        const responses = await getSynonym()
+        const responses = await getSynonym(synonymWord)
         console.log(responses)
         setLoading(false)
         setResponse(responses.data.synonyms)
