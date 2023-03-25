@@ -5,21 +5,14 @@ import axios from 'axios';
 let word = "anger"
 let URL =  'https://api.api-ninjas.com/v1/rhyme?word=' + word
 
+let option = {
+  headers: {
+    "X-Api-Key": "RO3HcoMlPoxv3aIo/tHeDA==N1ZNWBVJY32TY8ZA"
+  }
+}
 
-const Rhymes = () => {
-  useEffect(() => {
-    getRhymes();
-  }, []);
-  
-  const [rhymes, setRhymes] = React.useState();
-
-  const getRhymes = () => {
+export const getRhyme = () => {
     return axios
-      .get (URL)
-      .then((res) => console.log (res.data))
-      .catch((err) => console.error (err));
+      .get (URL, option)
     };
-    return <h1>Rhymes</h1>;
-};
 
-export default Rhymes;

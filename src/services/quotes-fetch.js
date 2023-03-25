@@ -14,10 +14,6 @@ let option = {
 export const getQuotes = () => {
     return axios
       .get (URL, option)
-      
-
-      // .then((res) => console.log (res.data))
-      // .catch((err) => console.error (err));
     };
 
 
