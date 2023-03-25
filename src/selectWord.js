@@ -1,10 +1,11 @@
 import React from 'react';
 import { useState, useEffect, setState } from 'react';
-import { getQuotes } from './quotes-fetch';
+import { getQuotes } from './services/quotesFetch';
+import { getSynonym } from './services/synonymFetch';
+import { getRhyme } from './services/rhymeFetch';
 
 // exporting function and adding default value so code doesn't return undefined when waiting for api
 export function selectWord(quote = ""){
-
 
     // removing punctuation from quote so doesn't affect length of word, and splitting into array of individual words
     quote = quote.replace(/['!"#$%&\\'()\*+,\-\.\/:;<=>?@\[\\\]\^_`{|}~']/g,"");
@@ -17,10 +18,11 @@ export function selectWord(quote = ""){
             return a.length > b.length ? a : b;
         }
     )
+    // send selected word to hint APIs
+
     return blankWord;
 }
 
-let correctAnswer = selectWord()
 
-console.log(correctAnswer)
+
 

@@ -1,6 +1,6 @@
-import { selectWord } from "../../services/logic"
-import { getQuotes } from "../../services/quotes-fetch"
-import { fetchQuotes } from "../Quote-Display/displayquote"
+import { selectWord } from "../../selectWord"
+import { getQuotes } from "../../services/quotesFetch"
+import { fetchQuotes } from "../Quote-Display/displayQuote"
 
 const BlankWordDisplay = (response) => {
     let quote = response.quote
