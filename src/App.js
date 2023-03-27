@@ -8,7 +8,7 @@ import { getRoles } from '@testing-library/react';
 import DisplayQuote from './tests/Quote-Display/displayQuote';
 import DisplayRhyme from './tests/Rhyme-Display/displayRhyme';
 import DisplaySynonym from './tests/Thesaurus-Display/displayThesaurus';
-
+import DisplayScore from './tests/Test-Scoreboard/scoreboardDisplay';
 
 function App() {
   return (
@@ -18,6 +18,7 @@ function App() {
         <DisplayQuote />
         <DisplayRhyme />
         <DisplaySynonym />
+        <DisplayScore />
       </main>
       </header>
     </div>
