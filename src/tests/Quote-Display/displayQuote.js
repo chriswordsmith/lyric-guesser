@@ -1,12 +1,13 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { selectWord } from '../../selectWord';
+import { selectWord } from '../../services/selectWord';
 import { getQuotes } from '../../services/quotesFetch';
 import BlankWordDisplay from '../BlankWord-Display/blankwordDisplay';
 import { getSynonym } from '../../services/synonymFetch';
 import { getRhyme } from '../../services/rhymeFetch';
 import DisplayRhyme from '../Rhyme-Display/displayRhyme';
 import DisplaySynonym from '../Thesaurus-Display/displayThesaurus';
+import UserAnswer from '../../components/UserAnswer/UserAnswer';
 
 
 
@@ -37,8 +38,10 @@ const DisplayQuote = () => {
       {!loading && <p>{JSON.stringify(quoteResponse[0].author)}</p>}
       {/* Runs quote through the blank word logic to find the longest word and make this the selected word, then pass to APIs */}
       {!loading && <BlankWordDisplay quote = {JSON.stringify(quoteResponse[0].quote)}/>}
+      {/* Sending quote data to HINT apis, so that they can find the longest word and then do API call to generate our hints */}
       {!loading && <DisplayRhyme quote = {JSON.stringify(quoteResponse[0].quote)}/>}
       {!loading && <DisplaySynonym quote = {JSON.stringify(quoteResponse[0].quote)}/>}
+      {!loading && <UserAnswer quote = {JSON.stringify(quoteResponse[0].quote)}/>}
     </div>
     
   );
