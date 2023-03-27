@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { selectWord } from '../../selectWord';
+import { selectWord } from '../../services/selectWord';
 import { getSynonym } from '../../services/synonymFetch';
 
 

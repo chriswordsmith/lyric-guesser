@@ -8,8 +8,10 @@ import { getRoles } from '@testing-library/react';
 import DisplayQuote from './tests/Quote-Display/displayQuote';
 import DisplayRhyme from './tests/Rhyme-Display/displayRhyme';
 import DisplaySynonym from './tests/Thesaurus-Display/displayThesaurus';
+import UserAnswer from './components/UserAnswer/UserAnswer';
 import { Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, Collapse } from 'reactstrap';
-import Footer from './services/componets/Footer';
+import Footer from './components/Footer/Footer'
+
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,6 +45,7 @@ function App() {
           <DisplayQuote />
           <DisplayRhyme />
           <DisplaySynonym />
+          <UserAnswer />
         </main>
         <Footer />
       </header>

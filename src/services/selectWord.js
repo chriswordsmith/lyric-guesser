@@ -1,8 +1,8 @@
 import React from 'react';
 import { useState, useEffect, setState } from 'react';
-import { getQuotes } from './services/quotesFetch';
-import { getSynonym } from './services/synonymFetch';
-import { getRhyme } from './services/rhymeFetch';
+import { getQuotes } from './quotesFetch';
+import { getSynonym } from './synonymFetch';
+import { getRhyme } from './rhymeFetch';
 
 // exporting function and adding default value so code doesn't return undefined when waiting for api
 export function selectWord(quote = ""){
