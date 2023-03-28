@@ -1,11 +1,11 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { selectWord } from '../../services/selectWord';
-import { getSynonym } from '../../services/synonymFetch';
+import { selectWord } from './selectWord';
+import { getSynonym } from './APIs/synonymFetch';
 
 
 
-const DisplaySynonym = (response) => { 
+const CallSynonym = (response) => { 
     const [synonymResponse, setResponse] = useState();
     const [loading, setLoading] = useState(true);
     let synonymQuote = response.quote
@@ -30,7 +30,7 @@ const DisplaySynonym = (response) => {
     
     <div>
       <header>
-      <h1>API CALL</h1>
+      <h1>SYNONYM CALL</h1>
       <p>{loading? "loading" : "done"}</p>
        {!loading && <h2>{JSON.stringify(synonymResponse[1]) }</h2>}
       </header>
@@ -38,4 +38,4 @@ const DisplaySynonym = (response) => {
   );
 }
 
-export default DisplaySynonym
+export default CallSynonym

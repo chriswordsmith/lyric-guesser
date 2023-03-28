@@ -1,17 +1,17 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { selectWord } from '../../services/selectWord';
-import { getQuotes } from '../../services/quotesFetch';
-import BlankWordDisplay from '../BlankWord-Display/blankwordDisplay';
-import { getSynonym } from '../../services/synonymFetch';
-import { getRhyme } from '../../services/rhymeFetch';
-import DisplayRhyme from '../Rhyme-Display/displayRhyme';
-import DisplaySynonym from '../Thesaurus-Display/displayThesaurus';
-import UserAnswer from '../../components/UserAnswer/UserAnswer';
-import { QuoteHashWord } from '../../services/wordHash';
+import { selectWord } from './selectWord';
+import { getQuotes } from './APIs/quotesFetch';
+import BlankWordDisplay from '../tests/BlankWord-Display/blankwordDisplay';
+import { getSynonym } from './APIs/synonymFetch';
+import { getRhyme } from './APIs/rhymeFetch';
+import DisplayRhyme from './callRhyme';
+import DisplaySynonym from './callThesaurus';
+import UserAnswer from '../components/UserAnswer/UserAnswer';
+import { QuoteHashWord } from './wordHash';
 
 
-const DisplayQuote = () => { 
+const CallQuote = () => { 
     const [quoteResponse, setResponse] = useState([]);
     const [loading, setLoading] = useState(true);
 
@@ -47,5 +47,5 @@ const DisplayQuote = () => {
   );
 }
 
-export default DisplayQuote
+export default CallQuote
 

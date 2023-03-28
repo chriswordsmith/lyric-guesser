@@ -1,6 +1,4 @@
 import { selectWord } from "../../services/selectWord"
-import { getQuotes } from "../../services/quotesFetch"
-import { fetchQuotes } from "../Quote-Display/displayQuote"
 
 const BlankWordDisplay = (response) => {
     let quote = response.quote

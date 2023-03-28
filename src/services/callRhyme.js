@@ -1,12 +1,12 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { getRhyme } from '../../services/rhymeFetch';
-import { selectWord } from '../../services/selectWord';
+import { getRhyme } from './APIs/rhymeFetch';
+import { selectWord } from './selectWord';
 
 
 
 
-const DisplayRhyme = (response) => { 
+const CallRhyme = (response) => { 
   const [rhymeResponse, setResponse] = useState();
   const [loading, setLoading] = useState(true);
   let rhymeQuote = response.quote
@@ -33,11 +33,11 @@ const DisplayRhyme = (response) => {
   return (
   
   <div>
-    <h1>API CALL</h1>
+    <h1>RHYME CALL</h1>
     <p>{loading? "loading" : "done"}</p>
       {!loading && <h2>{JSON.stringify(rhymeResponse[0]) }</h2>}
   </div>
   );
 }
 
-export default DisplayRhyme
+export default CallRhyme
