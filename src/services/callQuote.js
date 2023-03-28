@@ -11,7 +11,7 @@ import UserAnswer from '../components/UserAnswer/UserAnswer';
 import { QuoteHashWord } from './wordHash';
 
 
-const DisplayQuote = () => { 
+const CallQuote = () => { 
     const [quoteResponse, setResponse] = useState([]);
     const [loading, setLoading] = useState(true);
 
@@ -47,5 +47,5 @@ const DisplayQuote = () => {
   );
 }
 
-export default DisplayQuote
+export default CallQuote
 

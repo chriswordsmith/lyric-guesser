@@ -1,13 +1,10 @@
 import logo from './logo.svg';
 import React from 'react';
 import './App.css';
-import { fetchData } from './services/quotesFetch';
 import { useState, useEffect } from 'react';
-import { getQuotes } from './services/quotesFetch'
-import { getRoles } from '@testing-library/react';
-import DisplayQuote from './tests/Quote-Display/displayQuote';
-import DisplayRhyme from './tests/Rhyme-Display/displayRhyme';
-import DisplaySynonym from './tests/Thesaurus-Display/displayThesaurus';
+import CallQuote from './services/callQuote';
+import CallRhyme from './services/callRhyme';
+import CallSynonym from './services/callThesaurus';
 import DisplayScore from './tests/Test-Scoreboard/scoreboardDisplay';
 import UserAnswer from './components/UserAnswer/UserAnswer';
 import { Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, Collapse } from 'reactstrap';
@@ -46,9 +43,9 @@ function App() {
 
 
         <main>
-          <DisplayQuote />
-          <DisplayRhyme />
-          <DisplaySynonym />
+          <CallQuote />
+          <CallRhyme />
+          <CallSynonym />
           <DisplayScore />
           <UserAnswer />
           <GameContainer/>

@@ -5,7 +5,7 @@ import { getSynonym } from './APIs/synonymFetch';
 
 
 
-const DisplaySynonym = (response) => { 
+const CallSynonym = (response) => { 
     const [synonymResponse, setResponse] = useState();
     const [loading, setLoading] = useState(true);
     let synonymQuote = response.quote
@@ -38,4 +38,4 @@ const DisplaySynonym = (response) => {
   );
 }
 
-export default DisplaySynonym
+export default CallSynonym

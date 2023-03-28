@@ -1,8 +1,8 @@
 import React from 'react';
 import { useState } from 'react';
-import { RenderScore } from '../../scoreCounter';
-import { scoreIncrease } from '../../scoreCounter';
-import { scoreReset } from '../../scoreCounter';
+// import { RenderScore } from '../../scoreCounter';
+// import { scoreIncrease } from '../../scoreCounter';
+// import { scoreReset } from '../../scoreCounter';
 
 const DisplayScore = () => { 
 

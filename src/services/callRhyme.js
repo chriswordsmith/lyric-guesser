@@ -6,7 +6,7 @@ import { selectWord } from './selectWord';
 
 
 
-const DisplayRhyme = (response) => { 
+const CallRhyme = (response) => { 
   const [rhymeResponse, setResponse] = useState();
   const [loading, setLoading] = useState(true);
   let rhymeQuote = response.quote
@@ -40,4 +40,4 @@ const DisplayRhyme = (response) => {
   );
 }
 
-export default DisplayRhyme
+export default CallRhyme
