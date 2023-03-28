@@ -2,31 +2,22 @@ import React from 'react';
 import { useState } from 'react';
 var score = 0
 
-export function scoreIncrease() {
-          score++
-          console.log(score)
+// export function scoreIncrease() {
+//           score++
+//           console.log(score)
 
-            }
+//             }
 
 
 
-export function scoreReset(){
+// export function scoreReset(){
 
-    score=0
-              console.log(score)
+//     score=0
+//               console.log(score)
 
-}
+// }
 
-export function RenderScore(){
-    //const [score, scoreIncrease] = useState(0)
-    
-    return (
+// export function RenderScore(){
 
-        <div>
-    <h2>Score : {score}</h2>
-    <button onClick={scoreIncrease}>Increase score</button>
-    <button onClick={scoreReset}>Reset score</button>
-    </div>
-    )
-}
+// }
 
