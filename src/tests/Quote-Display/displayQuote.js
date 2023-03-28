@@ -8,7 +8,7 @@ import { getRhyme } from '../../services/rhymeFetch';
 import DisplayRhyme from '../Rhyme-Display/displayRhyme';
 import DisplaySynonym from '../Thesaurus-Display/displayThesaurus';
 import UserAnswer from '../../components/UserAnswer/UserAnswer';
-
+import { QuoteHashWord } from '../../services/wordHash';
 
 
 const DisplayQuote = () => { 
@@ -34,7 +34,7 @@ const DisplayQuote = () => {
     <div>
       <h1>API CALL</h1>
       <p>{loading ? "loading" : "done"}</p>
-      {!loading && <h2>{JSON.stringify(quoteResponse[0].quote)}</h2>}
+      {!loading && <QuoteHashWord quote = {quoteResponse[0].quote}/>}
       {!loading && <p>{JSON.stringify(quoteResponse[0].author)}</p>}
       {/* Runs quote through the blank word logic to find the longest word and make this the selected word, then pass to APIs */}
       {!loading && <BlankWordDisplay quote = {JSON.stringify(quoteResponse[0].quote)}/>}

@@ -33,11 +33,9 @@ const DisplayRhyme = (response) => {
   return (
   
   <div>
-    <header>
     <h1>API CALL</h1>
     <p>{loading? "loading" : "done"}</p>
       {!loading && <h2>{JSON.stringify(rhymeResponse[0]) }</h2>}
-    </header>
   </div>
   );
 }

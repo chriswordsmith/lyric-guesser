@@ -13,8 +13,6 @@ class UserAnswer extends Component {
             userAnswer: "",
     
         }
-    
-        
     }
 
     
