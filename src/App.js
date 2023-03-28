@@ -8,10 +8,12 @@ import { getRoles } from '@testing-library/react';
 import DisplayQuote from './tests/Quote-Display/displayQuote';
 import DisplayRhyme from './tests/Rhyme-Display/displayRhyme';
 import DisplaySynonym from './tests/Thesaurus-Display/displayThesaurus';
+import DisplayScore from './tests/Test-Scoreboard/scoreboardDisplay';
 import UserAnswer from './components/UserAnswer/UserAnswer';
 import { Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, Collapse } from 'reactstrap';
 import Footer from './components/Footer/Footer'
 import GameContainer from './components/Game/GameContainer';
+
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,14 +43,18 @@ function App() {
         </Collapse>
       </Navbar>
       <header className="App-header">
+
+
         <main>
           <DisplayQuote />
           <DisplayRhyme />
           <DisplaySynonym />
+          <DisplayScore />
           <UserAnswer />
           <GameContainer/>
         </main>
         <Footer />
+
       </header>
     </div>
   );
