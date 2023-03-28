@@ -1,4 +1,4 @@
-import { selectWord } from "../../selectWord"
+import { selectWord } from "../../services/selectWord"
 import { getQuotes } from "../../services/quotesFetch"
 import { fetchQuotes } from "../Quote-Display/displayQuote"
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { getRhyme } from '../../services/rhymeFetch';
-import { selectWord } from '../../selectWord';
+import { selectWord } from '../../services/selectWord';
 
 
 
