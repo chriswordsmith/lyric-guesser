@@ -8,7 +8,7 @@ import { getRhyme } from './rhymeFetch';
 export function selectWord(quote = ""){
 
     // removing punctuation from quote so doesn't affect length of word, and splitting into array of individual words
-    quote = quote.replace(/['!"#$%&\\'()\*+,\-\.\/:;<=>?@\[\\\]\^_`{|}~']/g,"");
+    quote = quote.toString().replace(/['!"#$%&\\'()\*+,\-\.\/:;<=>?@\[\\\]\^_`{|}~']/g,"");
     let splitQuote = quote.split(" ")
 
     // choosing word to be blanked for game by taking the longest word from the splitQuote array
