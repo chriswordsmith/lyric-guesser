@@ -11,7 +11,7 @@ import DisplaySynonym from './tests/Thesaurus-Display/displayThesaurus';
 import UserAnswer from './components/UserAnswer/UserAnswer';
 import { Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, Collapse } from 'reactstrap';
 import Footer from './components/Footer/Footer'
-
+import GameContainer from './components/Game/GameContainer';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,6 +46,7 @@ function App() {
           <DisplayRhyme />
           <DisplaySynonym />
           <UserAnswer />
+          <GameContainer/>
         </main>
         <Footer />
       </header>
