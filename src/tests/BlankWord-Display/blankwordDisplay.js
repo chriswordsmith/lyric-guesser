@@ -1,5 +1,5 @@
 import { selectWord } from "../../services/selectWord"
-import { getQuotes } from "../../services/quotesFetch"
+import { getQuotes } from "../../services/APIs/quotesFetch"
 import { fetchQuotes } from "../Quote-Display/displayQuote"
 
 const BlankWordDisplay = (response) => {

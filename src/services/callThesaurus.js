@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { selectWord } from '../../services/selectWord';
-import { getSynonym } from '../../services/synonymFetch';
+import { selectWord } from './selectWord';
+import { getSynonym } from './APIs/synonymFetch';
 
 
 
@@ -30,7 +30,7 @@ const DisplaySynonym = (response) => {
     
     <div>
       <header>
-      <h1>API CALL</h1>
+      <h1>SYNONYM CALL</h1>
       <p>{loading? "loading" : "done"}</p>
        {!loading && <h2>{JSON.stringify(synonymResponse[1]) }</h2>}
       </header>
