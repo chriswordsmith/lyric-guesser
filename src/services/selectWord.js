@@ -1,6 +1,5 @@
 import React from 'react';
 import { useState, useEffect, setState } from 'react';
-import { getQuotes } from './APIs/quotesFetch';
 import { getSynonym } from './APIs/synonymFetch';
 import { getRhyme } from './APIs/rhymeFetch';
 

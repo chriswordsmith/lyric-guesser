@@ -44,11 +44,6 @@ function App() {
 
         <main>
           <CallQuote />
-          <CallRhyme />
-          <CallSynonym />
-          <DisplayScore />
-          <UserAnswer />
-          <GameContainer/>
         </main>
         <Footer />
 
