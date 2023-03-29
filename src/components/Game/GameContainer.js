@@ -64,7 +64,7 @@ function GameContainer(props) {
             <span>Question {currentQuestion + 1}</span>/10
           </div>
           <div className='question-text'>     
-          {<QuoteHashWord quote = {CallQuote()}/>}
+          {!loading &&<QuoteHashWord quote = {CallQuote()}/>}
           </div>
         </div>
         {/* <div className='answer-section'>
