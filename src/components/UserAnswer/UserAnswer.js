@@ -1,66 +1,48 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { selectWord } from "../../services/selectWord";
 
+function UserAnswer(props) {
+  const [answer, setAnswer] = useState("");
+  const [isCorrect, setIsCorrect] = useState(false);
+  const [answered, setAnswered] = useState(false);
 
-class UserAnswer extends Component {
+  const correctAnswer = selectWord(props.quote);
 
-    constructor(props){
-        super(props);
-        this.quote = this.props.quote
-        this.correctAnswer = selectWord(this.quote)
-        this.state = {
-            answerIsTrue: false,
-            userAnswer: "",
-    
-        }
-    }
+  const handleInputChange = (event) => {
+    setAnswer(event.target.value);
+  };
 
-    
-    handleInputChange = event => {
-        let value = event.target.value;
-        this.setState({
-            [event.target.name]: value
-        })
-    }
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
 
-    handleFormSubmit = event => {
-        event.preventDefault();
-        
-        if (this.state.userAnswer !== this.correctAnswer){
-            this.setState({
-                answerIsTrue: false
-            }, () => {
-            alert(`userAnswer is ${this.state.answerIsTrue}
-            userAnswer = ${this.state.userAnswer}
-            correctAnswer = ${this.correctAnswer}`)
-            });
-            
-        }
-        else if (this.state.userAnswer == this.correctAnswer) {
-            this.setState({
-                answerIsTrue: true
-            }, () => {
-            alert(`userAnswer is ${this.state.answerIsTrue}
-            userAnswer = ${this.state.userAnswer}
-            correctAnswer = ${this.correctAnswer}`)
-            });
-        }
+    if (answer === correctAnswer) {
+      setIsCorrect(true);
+      setAnswered(true);
+    } else {
+      setIsCorrect(false);
+      setAnswered(true);
     }
-    render() {
-        return(
-            <div>
-                <input 
-                    value={this.state.userAnswer}
-                    onChange={this.handleInputChange}
-                    name="userAnswer"
-                    type="text"
-                    placeholder="Enter your guess"
-                />
-                <button onClick={this.handleFormSubmit}>Submit</button>
-            </div>
-        )
-    }
+  };
+
+  return (
+    <div>
+      <form onSubmit={handleFormSubmit}>
+        <label>
+          Enter your guess:
+          <input type="text" value={answer} onChange={handleInputChange} />
+        </label>
+        <button type="submit">Submit</button>
+      </form>
+      {answered && isCorrect && (
+        <div style={{ color: "green" }}>Correct!</div>
+      )}
+      {answered && !isCorrect && (
+        <div style={{ color: "red" }}>
+          Incorrect. The correct answer was "{correctAnswer}".
+        </div>
+      )}
+    </div>
+  );
 }
 
-
-export default UserAnswer
+export default UserAnswer;
