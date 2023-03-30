@@ -2,6 +2,7 @@ import React from "react";
 import { selectWord } from "./selectWord";
 
 export function QuoteHashWord (quote =""){
+    console.log(quote)
     let quoteToBeHashed = JSON.stringify(quote.quote)
     let wordToBeHashed = selectWord(quoteToBeHashed)
     let quoteWithHash = ""

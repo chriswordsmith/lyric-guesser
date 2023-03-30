@@ -43,7 +43,7 @@ function App() {
 
 
         <main>
-          <CallQuote />
+          <GameContainer />
         </main>
         <Footer />
 

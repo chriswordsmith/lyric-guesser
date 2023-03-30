@@ -32,18 +32,20 @@ const CallQuote = () => {
       }
     }
     return (
-    <div>
-      <h1>API CALL</h1>
-      <p>{loading ? "loading" : "done"}</p>
-      {!loading && <QuoteHashWord quote = {quoteResponse[0].quote}/>}
-      {!loading && <p>{JSON.stringify(quoteResponse[0].author)}</p>}
-      {/* Runs quote through the blank word logic to find the longest word and make this the selected word, then pass to APIs */}
-      {!loading && <BlankWordDisplay quote = {JSON.stringify(quoteResponse[0].quote)}/>}
-      {/* Sending quote data to HINT apis, so that they can find the longest word and then do API call to generate our hints */}
-      {!loading && <CallRhyme quote = {JSON.stringify(quoteResponse[0].quote)}/>}
-      {!loading && <CallSynonym quote = {JSON.stringify(quoteResponse[0].quote)}/>}
-      {!loading && <UserAnswer quote = {JSON.stringify(quoteResponse[0].quote)}/>}
-    </div>
+      JSON.stringify(quoteResponse[0].author)
+    // <div>
+      
+    //   {/* <h1>API CALL</h1>
+    //   <p>{loading ? "loading" : "done"}</p>
+    //   {!loading && <QuoteHashWord quote = {quoteResponse[0].quote}/>}
+    //   {!loading && <p>{JSON.stringify(quoteResponse[0].author)}</p>}
+    //   {/* Runs quote through the blank word logic to find the longest word and make this the selected word, then pass to APIs */}
+    //   {!loading && <BlankWordDisplay quote = {JSON.stringify(quoteResponse[0].quote)}/>}
+    //   {/* Sending quote data to HINT apis, so that they can find the longest word and then do API call to generate our hints */}
+    //   {!loading && <CallRhyme quote = {JSON.stringify(quoteResponse[0].quote)}/>}
+    //   {!loading && <CallSynonym quote = {JSON.stringify(quoteResponse[0].quote)}/>}
+    //   {!loading && <UserAnswer quote = {JSON.stringify(quoteResponse[0].quote)}/>} }
+    // </div>
     
   );
 }
