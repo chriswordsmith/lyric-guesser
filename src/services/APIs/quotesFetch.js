@@ -1,5 +1,3 @@
-import { useState, useEffect, setState } from 'react';
-import React from 'react';
 import axios from 'axios';
 
 let category = "anger"

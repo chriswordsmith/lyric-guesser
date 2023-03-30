@@ -1,11 +1,9 @@
 import React from "react";
 import { QuoteHashWord } from "../../services/wordHash";
 import { useState, useEffect } from 'react';
-import CallQuote from "../../services/callQuote";
 import { getQuotes } from "../../services/APIs/quotesFetch";
 import UserAnswer from "../UserAnswer/UserAnswer";
-import CallRhyme from "../../services/callRhyme";
-import CallSynonym from "../../services/callThesaurus";
+
 
 function GameContainer() {
   const [score, setScore] = useState(0);
@@ -32,17 +30,14 @@ function GameContainer() {
       console.error(e)
     }
   }
-
- 
-
-
-
-
-
   
   function handleGameOver() {
     setGameOver(true);
     // any other logic needed to end the game
+  }
+
+  function refreshPage() {
+    window.location.reload(false);
   }
 
   const handleAnswerOption = (isCorrect) => {
@@ -69,7 +64,7 @@ function GameContainer() {
       {!loading &&
         ( <> <div className='question-section'>
           <div className='question-count'>
-            <span>Question {currentQuestion + 1}</span>/10
+            <span>Guess The Quote!</span>
           </div>
           <div className='question-text'>     
           {!loading && <QuoteHashWord quote = {quoteResponse[0]}/>}
@@ -77,7 +72,11 @@ function GameContainer() {
         </div>
         <div className='answer-section'>
           {!loading && <UserAnswer quote = {quoteResponse[0]}/>}
-        </div> </>)
+        </div> 
+        <div className="reset-button">
+          <button onClick={refreshPage}>New Question</button>
+        </div>
+        </>)
     }
       </>
     )}

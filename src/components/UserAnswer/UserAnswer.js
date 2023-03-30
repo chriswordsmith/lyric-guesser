@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import CallSynonym from "../../services/callThesaurus";
-import CallRhyme from "../../services/callRhyme";
 import { selectWord } from "../../services/selectWord";
 import { getSynonym } from "../../services/APIs/synonymFetch";
 import { getRhyme } from "../../services/APIs/rhymeFetch";
@@ -13,7 +11,6 @@ function UserAnswer(props) {
   const [synonymResponse, setSynonymResponse] = useState();
   const [rhymeResponse, setRhymeResponse] = useState();
   const [loading, setLoading] = useState(true);
-  console.log(props.quote.quote)
 
 
   const correctAnswer = selectWord(props.quote.quote);
@@ -22,7 +19,6 @@ function UserAnswer(props) {
    const fetchSynonym = async () => {
     try{
         const responses = await getSynonym(correctAnswer)
-        console.log(responses)
         setLoading(false)
         setSynonymResponse(responses.data.synonyms)
         }catch(e){
@@ -34,10 +30,8 @@ function UserAnswer(props) {
   const fetchRhyme = async () => {
     try{
       const responses = await getRhyme(correctAnswer)
-      console.log(responses)
       setLoading(false)
       setRhymeResponse(responses.data)
-      console.log(rhymeResponse)
       }catch(e){
       console.error(e)
       }

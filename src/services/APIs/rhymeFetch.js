@@ -13,7 +13,6 @@ let option = {
 }
 
 export const getRhyme = (selectedWord) => {
-    console.log(selectedWord)
     let word = selectWord(selectedWord)
     let URL =  'https://api.api-ninjas.com/v1/rhyme?word=' + word
     return axios
