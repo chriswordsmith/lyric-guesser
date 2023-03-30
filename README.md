@@ -10,9 +10,28 @@ This is a simple quote generator application that displays a random quote based 
 ## Technologies Used
 
 * React
-* JavaScript
-* HTML
-* CSS
+* useState
+* useEffect
+* Reactstrap
+* Navbar
+* NavbarToggler
+* NavbarBrand
+* Nav
+* NavItem
+* NavLink
+* Collapse
+* Footer
+* GameContainer
+* CallQuote
+* CallRhyme
+* CallSynonym
+* logo.svg
+* App.css
+* UserAnswer
+
+
+
+
 ## Usage
 
 To use the application, follow these simple steps:
@@ -36,7 +55,5 @@ Thank you for using the Quote Generator!
 
 repo: git@github.com:chriswordsmith/lyric-guesser.git
 
-youtube presentation: (added later)
 
-deployed at: (added later)
 
