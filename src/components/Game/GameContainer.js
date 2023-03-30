@@ -1,11 +1,9 @@
 import React from "react";
 import { QuoteHashWord } from "../../services/wordHash";
 import { useState, useEffect } from 'react';
-import CallQuote from "../../services/callQuote";
 import { getQuotes } from "../../services/APIs/quotesFetch";
 import UserAnswer from "../UserAnswer/UserAnswer";
-import CallRhyme from "../../services/callRhyme";
-import CallSynonym from "../../services/callThesaurus";
+
 
 function GameContainer() {
   const [score, setScore] = useState(0);
@@ -32,13 +30,6 @@ function GameContainer() {
       console.error(e)
     }
   }
-
- 
-
-
-
-
-
   
   function handleGameOver() {
     setGameOver(true);

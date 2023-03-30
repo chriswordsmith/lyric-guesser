@@ -1,5 +1,3 @@
-import { useState, useEffect, setState } from 'react';
-import React from 'react';
 import axios from 'axios';
 import { selectWord } from '../selectWord';
 
@@ -12,7 +10,6 @@ let option = {
 }
 
 export const getSynonym = (selectedWord) => {
-  console.log(selectedWord)
   let word = selectWord(selectedWord)
   let URL =  'https://api.api-ninjas.com/v1/thesaurus?word=' + word
     return axios
