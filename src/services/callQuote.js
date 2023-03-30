@@ -32,7 +32,7 @@ const CallQuote = () => {
       }
     }
     return (
-      JSON.stringify(quoteResponse[0].author)
+      quoteResponse[0]
     // <div>
       
     //   {/* <h1>API CALL</h1>

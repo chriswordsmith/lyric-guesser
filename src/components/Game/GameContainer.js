@@ -1,34 +1,42 @@
 import React from "react";
 import { QuoteHashWord } from "../../services/wordHash";
 import { useState, useEffect } from 'react';
-
+import CallQuote from "../../services/callQuote";
 import { getQuotes } from "../../services/APIs/quotesFetch";
+import UserAnswer from "../UserAnswer/UserAnswer";
+import CallRhyme from "../../services/callRhyme";
+import CallSynonym from "../../services/callThesaurus";
 
-
-function GameContainer(props) {
+function GameContainer() {
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(false);
   const [currentQuestion, setCurrentQuestion] = useState(0);
 
-  const CallQuote = () => { 
-    const [quoteResponse, setResponse] = useState([]);
-    const [loading, setLoading] = useState(true);
-  
-    useEffect(() => {
-     fetchQuotes()
-      }, [])
-   
-  
-    const fetchQuotes = async () => {
-      try{
-        const responses = await getQuotes()
-        setLoading(false)
-        setResponse(responses.data)
-      }
-      catch(e){
-        console.error(e)
-      }
-    }}
+  const [quoteResponse, setQuoteResponse] = useState([]);
+
+  const [loading, setLoading] = useState(true);
+
+  // quotes API call
+  useEffect(() => {
+   fetchQuotes()
+    }, [])
+ 
+
+  const fetchQuotes = async () => {
+    try{
+      const responses = await getQuotes()
+      setLoading(false)
+      setQuoteResponse(responses.data)
+    }
+    catch(e){
+      console.error(e)
+    }
+  }
+
+ 
+
+
+
 
 
   
@@ -52,26 +60,25 @@ function GameContainer(props) {
 
   return (
     <div className="game-container">
-      
     {gameOver ? (
       <div className='score-section'>
         You scored {score} out of 10  
       </div>
     ) : (
       <>
-        <div className='question-section'>
+      {!loading &&
+        ( <> <div className='question-section'>
           <div className='question-count'>
             <span>Question {currentQuestion + 1}</span>/10
           </div>
           <div className='question-text'>     
-          {!loading &&<QuoteHashWord quote = {CallQuote()}/>}
+          {!loading && <QuoteHashWord quote = {quoteResponse[0]}/>}
           </div>
         </div>
-        {/* <div className='answer-section'>
-          {questions[currentQuestion].answerOptions.map((answerOption) => (
-            <button onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
-          ))}
-        </div> */}
+        <div className='answer-section'>
+          {!loading && <UserAnswer quote = {quoteResponse[0]}/>}
+        </div> </>)
+    }
       </>
     )}
       <h1>Score: {score}</h1>
@@ -79,6 +86,8 @@ function GameContainer(props) {
       <button onClick={handleGameOver}>End Game</button>
       {gameOver && <h2>Game Over!</h2>}
     </div>
+    
+
   );
 }
 
