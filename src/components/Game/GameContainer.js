@@ -36,6 +36,10 @@ function GameContainer() {
     // any other logic needed to end the game
   }
 
+  function refreshPage() {
+    window.location.reload(false);
+  }
+
   const handleAnswerOption = (isCorrect) => {
 		if (isCorrect) {
 			setScore(score + 1);
@@ -60,7 +64,7 @@ function GameContainer() {
       {!loading &&
         ( <> <div className='question-section'>
           <div className='question-count'>
-            <span>Question {currentQuestion + 1}</span>/10
+            <span>Guess The Quote!</span>
           </div>
           <div className='question-text'>     
           {!loading && <QuoteHashWord quote = {quoteResponse[0]}/>}
@@ -68,7 +72,11 @@ function GameContainer() {
         </div>
         <div className='answer-section'>
           {!loading && <UserAnswer quote = {quoteResponse[0]}/>}
-        </div> </>)
+        </div> 
+        <div className="reset-button">
+          <button onClick={refreshPage}>New Question</button>
+        </div>
+        </>)
     }
       </>
     )}
