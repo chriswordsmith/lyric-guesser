@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { selectWord } from "../../services/selectWord";
 
-function UserAnswer(props) {
+function UserAnswer(quote = "") {
   const [answer, setAnswer] = useState("");
   const [isCorrect, setIsCorrect] = useState(false);
   const [answered, setAnswered] = useState(false);
 
-  const correctAnswer = selectWord(props.quote);
+  const correctAnswer = selectWord(quote);
 
+  console.log(quote)
   const handleInputChange = (event) => {
     setAnswer(event.target.value);
   };
@@ -38,7 +39,7 @@ function UserAnswer(props) {
       )}
       {answered && !isCorrect && (
         <div style={{ color: "red" }}>
-          Incorrect. The correct answer was "{correctAnswer}".
+          Incorrect.".
         </div>
       )}
     </div>

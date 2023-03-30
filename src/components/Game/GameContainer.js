@@ -3,16 +3,18 @@ import { QuoteHashWord } from "../../services/wordHash";
 import { useState, useEffect } from 'react';
 
 import { getQuotes } from "../../services/APIs/quotesFetch";
+import UserAnswer from "../UserAnswer/UserAnswer";
 
 
-function GameContainer(props) {
+function GameContainer() {
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(false);
   const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [loading, setLoading] = useState(true);
 
   const CallQuote = () => { 
     const [quoteResponse, setResponse] = useState([]);
-    const [loading, setLoading] = useState(true);
+    
   
     useEffect(() => {
      fetchQuotes()
@@ -28,7 +30,11 @@ function GameContainer(props) {
       catch(e){
         console.error(e)
       }
-    }}
+    } 
+    return (
+      quoteResponse[0]
+    )
+  }
 
 
   
@@ -64,14 +70,12 @@ function GameContainer(props) {
             <span>Question {currentQuestion + 1}</span>/10
           </div>
           <div className='question-text'>     
-          {!loading &&<QuoteHashWord quote = {CallQuote()}/>}
+          {<QuoteHashWord quote = {CallQuote()}/>}
           </div>
+        </div> 
+        <div className='answer-section'>
+          {/* {<UserAnswer quote = {CallQuote()}/>} */}
         </div>
-        {/* <div className='answer-section'>
-          {questions[currentQuestion].answerOptions.map((answerOption) => (
-            <button onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
-          ))}
-        </div> */}
       </>
     )}
       <h1>Score: {score}</h1>
