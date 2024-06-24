@@ -1,3 +1,22 @@
+.custom-navbar {
+  background-color: #33393f; /* change this to the desired color */
+  padding: 1rem;
+}
+
+.navbar {
+  font-family: 'Open Sans', sans-serif; /* this changes font in navbar to same as "main body text" */
+}
+.navbar-brand {
+  color: #ffffff; /* change this to the desired color */
+}
+.navbar-nav .nav-link {
+  color: #ffffff; /* change this to the desired color */
+}
+.navbar {
+  padding-right: 0;
+  padding-left: 0;
+}
+
 .App {
   text-align: center;
 }
